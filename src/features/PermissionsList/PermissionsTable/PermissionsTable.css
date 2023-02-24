@@ -1,0 +1,31 @@
+.saveButton {
+    margin: 30px 0;
+}
+
+.userName_container {
+    display: flex;
+    align-items: center;
+}
+
+.userIcon {
+    margin-top: 4px;
+}
+
+.userName {
+    margin-left: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--search-and-header-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--prime-color);
+    border-radius: 10px;
+}
+

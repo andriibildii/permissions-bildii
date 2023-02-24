@@ -1,7 +1,10 @@
 # Permissions APP 
 #### React test task produced by Andrii Bildii
 
+![Hero](./src/assets/images/hero-page.png "Hero")
+
 ------------
+
 This project was created by:
 - ReactJS
 - Redux Toolkit

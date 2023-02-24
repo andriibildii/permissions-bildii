@@ -16,6 +16,6 @@ export const SaveButton = ({text, updateState}) => {
     }));
 
     return (
-        <ColorButton variant="contained" onClick={updateState} >{text}</ColorButton>
+        <ColorButton variant="contained" onClick={updateState}>{text}</ColorButton>
     );
 }

@@ -1,4 +1,4 @@
-import reducer, {removePermission, updatePermission} from './permissionsSlice'
+import reducer, {removePermission, updatePermission} from '../app/permissionsSlice'
 
 describe('Permissions redux state tests', () => {
     it('should return the initial state', () => {

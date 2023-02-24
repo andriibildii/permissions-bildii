@@ -1,24 +1,22 @@
-import {useDispatch} from 'react-redux';
-import {removePermission} from '../../../../app/permissionsSlice';
-import {useState} from 'react';
-import IconButton from '@mui/material/IconButton';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removePermission } from '../../../../app/permissionsSlice';
+import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import {styled, alpha} from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles';
 
-export const DropdownMenu = ({id}) => {
+export const DropdownMenu = ({ id }) => {
     const dispatch = useDispatch();
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-    const handleClick = (event) => {
+    const handleClick = event => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const StyledMenu = styled((props) => (
+    const StyledMenu = styled(props => (
         <Menu
             elevation={0}
             anchorOrigin={{
@@ -31,13 +29,15 @@ export const DropdownMenu = ({id}) => {
             }}
             {...props}
         />
-    ))(({theme}) => ({
+    ))(({ theme }) => ({
         '& .MuiPaper-root': {
             borderRadius: 6,
             marginTop: theme.spacing(1),
             minWidth: 180,
             color:
-                theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+                theme.palette.mode === 'light'
+                    ? 'rgb(55, 65, 81)'
+                    : theme.palette.grey[300],
             boxShadow:
                 'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
             '& .MuiMenu-list': {
@@ -70,7 +70,7 @@ export const DropdownMenu = ({id}) => {
                 disableelevation="true"
                 onClick={handleClick}
             >
-                <MoreHorizIcon/>
+                <MoreHorizIcon />
             </IconButton>
             <StyledMenu
                 id="demo-customized-menu"
@@ -81,8 +81,11 @@ export const DropdownMenu = ({id}) => {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={() => dispatch(removePermission({id}))} disableRipple>
-                    <DeleteIcon/>
+                <MenuItem
+                    onClick={() => dispatch(removePermission({ id }))}
+                    disableRipple
+                >
+                    <DeleteIcon />
                     Delete
                 </MenuItem>
             </StyledMenu>
